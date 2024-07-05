@@ -30,12 +30,8 @@ class HomePageController extends GetxController {
 
     if (response.statusCode == 200) {
 
-      print("hello ");
-
       var data = json.decode(response.body) as List;
-      print("hello $data");
       userModelList.value = data.map((user) => UserModel.fromJson(user)).toList();
-      print("hello ${userModelList.value}");
       isLoading.value = false;
       update();
 
